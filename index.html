@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Psychic Game</title>
+
+</head>
+<body>
+	<h1>Psychic Game</h1>
+	<h2>Guess what letter I'm thinking of</h2>
+	<h3>Wins: </h3>
+	<h3>Losses: </h3>
+	<h3>Guesses Left: </h3>
+
+	<div id=game></div>>
+		<script type="text/javascript">
+		//java begins
+		//define variables
+		var wins = 0;
+		var loss = 0;
+		var guesses = 0;
+		var guessesLeft = 9;
+		var userGuess;
+		var arrayLetter = ["_", "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+		var computerGuess = arrayLetter[Math.floor(Math.random() * arrayLetter.length) + 1 ];;
+		
+	
+		
+		
+		//if letter === userGuess, win++; generate new letter;
+		if (userGuess === computerGuess){
+			wins++;
+			
+			guesses = 0;
+		}
+
+		else if (guessesLeft > 0){
+			guesses++;
+		}
+
+		else{
+			alert("You lose!");
+			loss++;
+			guesses = 0;
+
+		}
+		guessesLeft = (9 - guesses);
+		//else if, loss++; generate new letter;
+
+		var html = "<p>Press any letter to begin</p>" +
+          "<p>wins: " + wins + "</p>" +
+          "<p>losses: " + loss + "</p>" +
+          "<p>Guesses Left: " + guessesLeft + "</p>";
+
+		</script>
+</body>
+</html>
